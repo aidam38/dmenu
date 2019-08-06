@@ -327,10 +327,6 @@ keypress(XKeyEvent *ev)
 
 	if (ev->state & ControlMask) {
 		switch(ksym) {
-		case XK_h: ksym = XK_Left;      break;
-		case XK_l: ksym = XK_Right;     break;
-		case XK_j: ksym = XK_Down;      break;
-		case XK_k: ksym = XK_Up;        break;
 		case XK_a: ksym = XK_Home;      break;
 		case XK_c: ksym = XK_Escape;    break;
 		case XK_d: ksym = XK_Delete;    break;
@@ -378,6 +374,10 @@ keypress(XKeyEvent *ev)
 		}
 	} else if (ev->state & Mod1Mask) {
 		switch(ksym) {
+		case XK_h: ksym = XK_Left;      break;
+		case XK_l: ksym = XK_Right;     break;
+		case XK_j: ksym = XK_Down;      break;
+		case XK_k: ksym = XK_Up;        break;
 		case XK_b:
 			movewordedge(-1);
 			goto draw;
@@ -386,10 +386,10 @@ keypress(XKeyEvent *ev)
 			goto draw;
 		case XK_g: ksym = XK_Home;  break;
 		case XK_G: ksym = XK_End;   break;
-		case XK_h: ksym = XK_Up;    break;
-		case XK_j: ksym = XK_Next;  break;
-		case XK_k: ksym = XK_Prior; break;
-		case XK_l: ksym = XK_Down;  break;
+		// case XK_h: ksym = XK_Up;    break;
+		// case XK_j: ksym = XK_Next;  break;
+		// case XK_k: ksym = XK_Prior; break;
+		// case XK_l: ksym = XK_Down;  break;
 		default:
 			return;
 		}
